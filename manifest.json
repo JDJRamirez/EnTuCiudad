@@ -1,0 +1,21 @@
+{
+    "name":"#pruebaPWA",
+    "short_name":"#pruebaPWA",
+    "description":"prueba para desplegar una PWA",
+    "background_color":"#ff4500",
+    "theme_color":"#ff4500",
+    "orientation":"portrait",
+    "display":"standalone",
+    "start_url":"./?utm_source=web_app_manifest",
+    "scope":"./",
+    "lang":"es-MX",
+    "icons":
+    [
+        {
+            "src":"./img/campana.svg",
+            "sizes":"144x144",
+            // "sizes":"16x16 32x32 64x64 96x96 128x128 192x192 256x256 384x384 512x512 1024x1024",
+            "type":"image/svg"
+        }
+    ]
+}
