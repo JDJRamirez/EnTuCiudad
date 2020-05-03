@@ -37,6 +37,9 @@
     <section>
         <iframe id="iframe" width="100%" src="https://www.youtube.com/embed/WopbUeiJrdM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
+    <section id="text">
+        
+    </section>
 </body>
 <script>
     $("#url").on("change",()=>
@@ -47,6 +50,7 @@
         $.each(url,function(index,value)
         {
             urlF = value;
+            alert(value);
         });
         $("#iframe").attr("src","https://www.youtube.com/embed/" + url);
     });
