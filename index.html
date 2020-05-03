@@ -41,8 +41,14 @@
 <script>
     $("#url").on("change",()=>
     {
-        var url = $("#url").val();
-        $("#iframe").attr("src",url);
+        var url = ($("#url").val()).split("/");
+        
+        var urlF = "";
+        $.each(url,function(index,value)
+        {
+            urlF = value;
+        });
+        $("#iframe").attr("src","https://www.youtube.com/embed/" + url);
     });
 </script>
 </html>
