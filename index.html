@@ -32,7 +32,10 @@
         </div>
     </header>
     <section>
-        <input id="url" type="text">
+        <div class="input-field col s6">
+            <input id="url" type="text">
+            <label for="url">Url de youtube</label>
+        </div>
     </section>
     <section>
         <iframe id="iframe" width="100%" src="https://www.youtube.com/embed/WopbUeiJrdM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -44,14 +47,33 @@
 <script>
     $("#url").on("change",()=>
     {
-        var url = ($("#url").val()).split("/");
-        
+        var url = $("#url").val();
+        var urlTemp = "";
         var urlF = "";
-        $.each(url,function(index,value)
+        if(url.includes("playlist"))
+        {
+            urlTemp = url.split("=");
+        }
+        else
+        {
+            urlTemp = url.split("/");
+        }
+
+        $.each(urlTemp,function(index,value)
         {
             urlF = value;
         });
-        $("#iframe").attr("src","https://www.youtube.com/embed/" + urlF);
+
+        if(url.includes("playlist"))
+        {
+            $("#iframe").attr("src","https://www.youtube.com/embed/videoseries?list=" + urlF);
+        }
+        else
+        {
+            $("#iframe").attr("src","https://www.youtube.com/embed/" + urlF);
+        }
+        
     });
+    videoseries?list=
 </script>
 </html>
