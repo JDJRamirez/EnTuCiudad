@@ -13,8 +13,7 @@
     [
         {
             "src":"./img/campana.svg",
-            "sizes":"any",
-            "type":"image/svg"
+            "sizes":"any"
         }
     ]
 }
