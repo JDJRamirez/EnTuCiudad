@@ -13,6 +13,7 @@
     [
         {
             "src":"./img/campana.svg",
+            "sizes":"128x128 512x512",
             "purpose":"any"
         }
     ]
