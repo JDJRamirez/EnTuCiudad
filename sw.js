@@ -2,14 +2,13 @@
 const CACHE_NAME = 'v1_cache_programador_fitness',
   urlsToCache = [
     './',
-    'https://fonts.googleapis.com/css?family=Raleway:400,700',
-    'https://fonts.gstatic.com/s/raleway/v12/1Ptrg8zYS_SKggPNwJYtWqZPAA.woff2',
-    'https://use.fontawesome.com/releases/v5.0.7/css/all.css',
-    'https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-brands-400.woff2',
+    "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js",
+    "https://fonts.googleapis.com/css2?family=Jaldi&display=swap",
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js",
     './style.css',
     './script.js',
-    './img/ProgramadorFitness.png',
-    './img/favicon.png'
+    './img/campana.svg'
   ]
 
 //durante la fase de instalación, generalmente se almacena en caché los activos estáticos
