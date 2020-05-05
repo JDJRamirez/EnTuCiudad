@@ -37,13 +37,17 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Jaldi&display=swap" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <header class="row">
-        <div class="col s10 m10 l10 xl10  offset-s1 offset-m1 offset-l1 offset-xl1">
-            <p class="title">BIENVENIDO</p>
+    <nav>
+        <div class="nav-wrapper">
+            <!-- <p class="title">BIENVENIDO</p> -->
+            <ul id="nav-mobile" class="right">
+            </ul>
         </div>
-    </header>
+    </nav>
+
     <section>
         <div class="input-field col s6">
             <input id="url" type="text">
@@ -52,9 +56,6 @@
     </section>
     <section>
         <iframe id="iframe" width="100%" height="400rem" src="https://www.youtube.com/embed/WopbUeiJrdM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </section>
-    <section id="text">
-        
     </section>
     <script src="./script.js"></script>
 </body>
@@ -91,13 +92,17 @@
     });
 
     var deferredPrompt;
+    var btn_install;
 
 // window.onload = function()
 
-function installPWA()
-{
-// btnSave.addEventListener('click', function()
+// function installPWA()
+// $("#btn_install").on("click",()=>{
+
 // {
+// btnSave.addEventListener('click', function()
+function eventInstall()
+{
     if(deferredPrompt !== undefined)
     {
         // The user has had a positive interaction with our app and Chrome
@@ -121,15 +126,24 @@ function installPWA()
         });
     }
 }
-
+// });
 window.addEventListener('beforeinstallprompt', function(e)
 {
-  console.log('beforeinstallprompt Event fired');
-  e.preventDefault();
-  // Stash the event so it can be triggered later.
-  deferredPrompt = e;
-  installPWA();
-//   showInstallPromotion();
+    
+    console.log('beforeinstallprompt Event fired');
+    e.preventDefault();
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+    if(btn_install==undefined)
+    {
+        btn_install = $("<a>");
+        $(btn_install).append("<i class='material-icons'>file_download</i>");
+        $(btn_install).on("click",()=>{eventInstall()});
+        $("#nav-mobile").append(btn_install);
+    }
+
+    //   $("#nav-mobile").append("<li><a id='btn_install'><i class='material-icons'>file_download</i></a></li>");
+
   return false;
 });
 </script>
