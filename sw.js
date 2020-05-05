@@ -8,7 +8,7 @@ const CACHE_NAME = 'v1_cache_serviciosJDJ',
     "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js",
     './style.css',
     './script.js',
-    './img/campana.svg'
+    './img/campana.png'
   ]
 
 //durante la fase de instalación, generalmente se almacena en caché los activos estáticos
