@@ -92,19 +92,21 @@
 
     var deferredPrompt;
 
-window.addEventListener('beforeinstallprompt', function(e) {
+window.addEventListener('beforeinstallprompt', function(e)
+{
   console.log('beforeinstallprompt Event fired');
   e.preventDefault();
-
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
-
   return false;
 });
 
-btnSave.addEventListener('click', function()
+window.onload = function()
 {
-    if(deferredPrompt !== undefined) {
+// btnSave.addEventListener('click', function()
+// {
+    if(deferredPrompt !== undefined)
+    {
         // The user has had a positive interaction with our app and Chrome
         // has tried to prompt previously, so let's show the prompt.
         deferredPrompt.prompt();
@@ -125,6 +127,7 @@ btnSave.addEventListener('click', function()
         deferredPrompt = null;
         });
     }
-});
+}
+// });
 </script>
 </html>
