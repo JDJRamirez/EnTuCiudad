@@ -1,5 +1,5 @@
 //asignar un nombre y versión al cache
-const CACHE_NAME = 'v1_cache_serviciosJDJ',
+const CACHE_NAME = 'v2_cache_serviciosJDJ',
   urlsToCache = [
     './',
     "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css",
@@ -8,6 +8,7 @@ const CACHE_NAME = 'v1_cache_serviciosJDJ',
     "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js",
     './style.css',
     './script.js',
+    './index.html',
     './img/campana.png'
   ]
 
