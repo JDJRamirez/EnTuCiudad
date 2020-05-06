@@ -8,7 +8,7 @@ const CACHE_NAME = 'v2_cache_serviciosJDJ',
     "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js",
     './style.css',
     './script.js',
-    './index.html',
+    // './index.html',
     './img/campana.png'
   ]
 
@@ -46,12 +46,17 @@ self.addEventListener('activate', e => {
 })
 
 //cuando el navegador recupera una url
-self.addEventListener('fetch', e => {
+self.addEventListener('fetch', e =>
+{
+  // console.log(e);
   //Responder ya sea con el objeto en caché o continuar y buscar la url real
   e.respondWith(
     caches.match(e.request)
-      .then(res => {
-        if (res) {
+      .then(res =>
+      {
+        if (res)
+        {
+          console.log(res);
           //recuperar del cache
           return res
         }
