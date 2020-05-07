@@ -16,6 +16,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="469995200100-d6e0f5vpvv0uafvk08i5vmbh4cjprk7f.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
     <!-- icono de la pagina -->
     <link rel="shortcut icon" type="image/png" href="./img/campana.png">
 
@@ -26,15 +30,15 @@
     <link rel="manifest" href="./manifest.json">
     <link rel="stylesheet" href="./style.css">
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <!-- materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+    <!-- letras -->
     <link href="https://fonts.googleapis.com/css2?family=Jaldi&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -43,10 +47,16 @@
     <nav>
         <div class="nav-wrapper">
             <!-- <p class="title">BIENVENIDO</p> -->
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right">
             </ul>
         </div>
     </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a id="iniciaSesionGoogle">Iniciar Sesion</a></li>
+        <li><a >Cerrar Sesion</a></li>
+    </ul>
 
     <section>
         <div class="input-field col s6">
@@ -58,9 +68,14 @@
         <!-- <iframe id="iframe" width="100%" height="400rem" src="https://www.youtube.com/embed/WopbUeiJrdM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         <iframe id="iframe" width="100%" height="400rem" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
+
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="display: none"></div>
+
     <script src="./script.js"></script>
+    <script src="./signin.js"></script>
 </body>
 <script>
+
     $("#url").on("change",()=>
     {
         var url = $("#url").val();
@@ -102,7 +117,7 @@
 
 // {
 // btnSave.addEventListener('click', function()
-function eventInstall()
+    function eventInstall()
 {
     if(deferredPrompt !== undefined)
     {
@@ -128,7 +143,7 @@ function eventInstall()
     }
 }
 // });
-window.addEventListener('beforeinstallprompt', function(e)
+    window.addEventListener('beforeinstallprompt', function(e)
 {
     
     console.log('beforeinstallprompt Event fired');
@@ -147,5 +162,17 @@ window.addEventListener('beforeinstallprompt', function(e)
 
   return false;
 });
+
+    $(document).ready(function()
+    {
+        $('.sidenav').sidenav();
+    });
+
+    $("#iniciaSesionGoogle").on("click",function()
+    {
+        $(".abcRioButtonContentWrapper").click();
+    });
+    
+
 </script>
 </html>

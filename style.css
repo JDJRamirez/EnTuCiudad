@@ -15,3 +15,11 @@ nav
     background-color: #ff4500 !important;
     text-align: center;
 }
+
+@media only screen and (min-width: 993px)
+{
+    nav a.sidenav-trigger
+    {
+        display: block !important;
+    }
+}

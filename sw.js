@@ -56,7 +56,7 @@ self.addEventListener('fetch', e =>
       {
         if (res)
         {
-          console.log(res);
+          // console.log(res);
           //recuperar del cache
           return res
         }
