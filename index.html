@@ -18,6 +18,8 @@
 
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="469995200100-d6e0f5vpvv0uafvk08i5vmbh4cjprk7f.apps.googleusercontent.com">
+    <!-- <meta name="google-signin-client_id" content="469995200100-pb5u6gm98npq3tda1pvr49qgf4ug2dg7.apps.googleusercontent.com"> -->
+    
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <!-- icono de la pagina -->
@@ -54,13 +56,17 @@
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-        <li><a id="iniciaSesionGoogle">Iniciar Sesion</a></li>
+        <li>
+            <a class="modal-trigger" href="#modalSeleccionarInicioSesion">Iniciar Sesion</a>
+        </li>
+        <!-- <li><a id="iniciaSesionGoogle">Iniciar Sesion</a></li> -->
         <li><a >Cerrar Sesion</a></li>
+        
     </ul>
 
     <section>
         <div class="input-field col s6">
-            <input id="url" type="text">
+            <input id="url" type="text" value="">
             <label for="url">Url de youtube</label>
         </div>
     </section>
@@ -68,13 +74,38 @@
         <!-- <iframe id="iframe" width="100%" height="400rem" src="https://www.youtube.com/embed/WopbUeiJrdM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         <iframe id="iframe" width="100%" height="400rem" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
+    
+    <!-- <div id="fb-root"></div> -->
 
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="display: none"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&autoLogAppEvents=1&version=v7.0&appId=2493604780902683"></script>
+
+    <!-- Modal Structure -->
+    <div id="modalSeleccionarInicioSesion" class="modal bottom-sheet">
+        <div class="modal-content">
+            <div style="text-align: center" class="col s12 m12 l12 xl12">
+                <div class="fb-login-button" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true" data-width=""></div>
+            </div>
+            <div style="text-align: center" class="col s12 m12 l12 xl12">
+                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+            </div>
+        </div>
+        
+
+        <!-- <div class="modal-footer"> -->
+        <!-- <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div> -->
+    </div>
 
     <script src="./script.js"></script>
     <script src="./signin.js"></script>
 </body>
+
 <script>
+
+    $(document).ready(function(){
+        $('.modal').modal();
+        $("#iframe").attr("src","https://www.youtube.com/embed/" + "u6jUNSD-ryQ");
+    });
 
     $("#url").on("change",()=>
     {
@@ -173,6 +204,5 @@
         $(".abcRioButtonContentWrapper").click();
     });
     
-
 </script>
 </html>
