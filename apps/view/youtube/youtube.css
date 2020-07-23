@@ -1,0 +1,26 @@
+body
+{
+    /* padding: 5px; */
+}
+
+/* .urlIcon
+{
+    font-size: 2rem;
+} */
+
+.inputUrl
+{
+    margin-right: 5px;
+}
+
+input:focus
+{
+    outline: none;
+}
+
+/* #input_url:active
+{
+    border: none;
+    border-bottom: none;
+    text-decoration: none;
+} */

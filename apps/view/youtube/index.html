@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html id="htmlView" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../../../assets/lib/w3css/w3.css">
+    <link rel="stylesheet" href="../../../assets/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../environments/style.css">
+
+    <link rel="stylesheet" href="./youtube.css">
+</head>
+<body>
+    <div class="w3-row w3-section">
+        <div class="w3-col s2 m1 l1 w3-center">
+            <i class="fa fa-youtube-play urlIcon w3-xxlarge" aria-hidden="true"></i>
+        </div>
+
+        <div class="w3-rest inputUrl">
+            <input id="input_url" class="w3-input w3-border" name="first" type="text" placeholder="Url">
+        </div>
+    </div>
+    <section>
+        <iframe id="iframeYoutube" width="100%" height="400rem" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-autoplay="1"></iframe>
+    </section>
+</body>
+
+<script src="./youtube.js"></script>
+
+<script>
+    let youtube = new youtubeClass();
+</script>
+</html>

@@ -1,0 +1,55 @@
+body
+{
+    font-family: 'Jaldi', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    --primary : #ff4500;
+    /* --icon: #000000; */
+    --icon: #ffffff;
+    /* --icon-active: #ffffff; */
+    --icon-active: #000000;
+    --background:#000000;
+    --icon-size: 1.4rem;
+}
+
+.w3-bar-item
+{
+    font-size: 1.4rem;
+}
+
+/* .fa
+{
+    font-size: var(--icon-size);
+} */
+
+/* .w3-button:focus
+{
+    color: var(--icon-active) !important;
+    background-color: var(--primary) !important;
+}
+
+.w3-button:hover
+{
+    color: var(--icon-active) !important;
+    background-color: var(--primary) !important;
+} */
+
+.col-primary
+{
+    background-color: var(--primary);
+}
+
+.col-icon
+{
+    color:var(--icon);
+}
+
+.col-icon-active
+{
+    color: var(--icon-active);
+}
+
+input
+{
+    border-radius: 7px;
+}
